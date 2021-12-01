@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:16-alpine
 
 USER node
 
@@ -10,4 +10,6 @@ COPY --chown=node:node ./package.json ./
 RUN npm install
 
 COPY --chown=node:node ./ ./
+
+# For development
 CMD ["npm", "start"]
